@@ -30,12 +30,12 @@ const Header = () => {
           />
         </Navbar.Text>
         <Nav>
-          <Dropdown alignright="true">
+          <Dropdown alignright="true" >
             <Dropdown.Toggle variant="success">
               <FaShoppingCart color="white" fontSize="25px" />
               <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
-            <Dropdown.Menu style={{ minWidth: 370 }}>
+            <Dropdown.Menu style={{ overflow:"hidden" ,minWidth:'320px' , float:'left', marginLeft:'-320px'}}>
               {cart.length > 0 ? (
                 <>
                   {cart.map((prod) => (
