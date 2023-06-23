@@ -13,8 +13,9 @@ import { Link } from "react-router-dom";
 import { CartState } from "../context/Context";
 import { AiFillDelete } from "react-icons/ai";
 const Header = () => {
+
   const {
-    state: { cart },dispatch
+    state: { cart },dispatch,productDispatch
   } = CartState();
   return (
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
@@ -25,8 +26,14 @@ const Header = () => {
         <Navbar.Text className="search">
           <FormControl
             style={{ width: 500 }}
+            type='search'
             placeholder="Search a Product"
             className="m-auto"
+            aria-label="Search"
+            onChange={(e)=>productDispatch({
+              type:"SORT_BY_SEARCH",
+              payload:e.target.value,
+            })}
           />
         </Navbar.Text>
         <Nav>
